@@ -22,7 +22,7 @@ class MsgDiffUtils(
            oldList[oldItemPosition].id!=newList[newItemPosition].id ->{
                false
            }
-           else -> true
+           else -> false
        }
     }
 

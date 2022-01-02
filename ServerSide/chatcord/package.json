@@ -1,0 +1,17 @@
+{
+  "name": "chatcord",
+  "version": "1.0.0",
+  "description": "create chate system",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "dev" : "nodemon server"
+  },
+  "author": "mahmoud",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "moment": "^2.29.1",
+    "socket.io": "^4.4.0"
+  }
+}

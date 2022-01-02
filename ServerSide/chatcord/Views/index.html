@@ -1,0 +1,26 @@
+<script src="/socket.io/socket.io.js"></script>
+
+<div id="message-contaner"></div>
+<form id="message-form">
+  <input type="text" name="message" id="message-input" />
+  <button type="submit">send</button>
+</form>
+
+<script>
+  const socket = window.io();
+  const msgForm = document.querySelector("#message-form");
+  const msgInput = document.querySelector("#message-input");
+  const msgContaner = document.querySelector("#message-contaner");
+  var IDe = 0;
+  msgForm.onsubmit = (e) => {
+    e.preventDefault();
+    const msg = msgInput.value;
+
+    IDe++;
+    socket.emit("send-message", { id: IDe, msg: msg });
+    msgInput.value = "";
+  };
+  socket.on("send-message", ({ msg }) => {
+    msgContaner.innerHTML += `<p>${msg}</p>`;
+  });
+</script>
